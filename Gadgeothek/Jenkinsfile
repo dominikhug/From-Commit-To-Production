@@ -1,0 +1,26 @@
+pipeline {
+    agent {
+        label 'jenkins-slave6.yvu.ch'
+    }
+    stages {
+        stage('build') {
+            steps {
+                sh 'echo build'
+            }
+        }
+
+        stage('End2End Tests')
+        {
+            steps {
+                sh 'echo End2End Tests'
+            }
+        }
+
+        stage('deployment')
+        {
+            steps {
+                sh 'echo deployment'
+            }
+        }
+    }
+}
