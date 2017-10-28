@@ -9,13 +9,13 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.3.3'
-        classpath 'gradle.plugin.ch.yvu.teststore:gradle-plugin:0.12'
+        // classpath 'gradle.plugin.ch.yvu.teststore:gradle-plugin:0.12'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
 }
 
-apply plugin: 'ch.yvu.teststore'
+// apply plugin: 'ch.yvu.teststore'
 
 allprojects {
     repositories {
@@ -30,14 +30,14 @@ allprojects {
     }
 }
 
-teststore {
+/* teststore {
     host 'test-store.testing-knowhow.ch'
     port 8080
     testSuite '73b05c8c-5796-4bc7-ab6d-36b84b6bfaac'
     revision System.properties['revision']
     xmlReports ~/.*\/test-results\/TEST-.*\.xml/
     incremental false
-}
+} */
 
 
 // testResults: '**/test-results/**/*.xml'
