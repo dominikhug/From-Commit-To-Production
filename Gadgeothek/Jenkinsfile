@@ -8,11 +8,13 @@ pipeline {
                 sh 'echo build'
                 sh 'cd Gadgeothek; ./gradlew build'
                 sh 'cd Gadgeothek; ./gradlew lint'
+
             }
             post {
                 always {
                     archiveArtifacts 'Gadgeothek/app/build/outputs/apk/*.apk'
                     archiveArtifacts 'Gadgeothek/app/build/reports/*.html'
+                    junit allowEmptyResults: true, testResults: '**/test-results/**/*.xml'
                  }
             }
         }
@@ -21,6 +23,7 @@ pipeline {
         {
             steps {
                 sh 'echo End2End Tests'
+
             }
         }
 
